@@ -17,15 +17,15 @@ footer {
     justify-content: center;
     align-items: center;
     margin: 0 auto;
-    position: absolute;
+    position: sticky;
     left: 50%;
     bottom: 0;
     width: 100%;
     height: 50px;
-    transform: translateX(-50%);
     background-color: rgba(128, 128, 128, 0.801);
     border-radius: 7px 7px 0 0;
     box-shadow: 0 0 15px black;
+    z-index: 50;
 
 
     p {

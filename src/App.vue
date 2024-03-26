@@ -29,6 +29,12 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+h1,
+p {
+  cursor: default;
 }
 
 li {
@@ -59,6 +65,18 @@ $mainColor: rgba(128, 128, 128, 0.74);
 @keyframes underlining {
   100% {
     width: 100%;
+  }
+}
+
+@keyframes appear {
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes appear-top {
+  100% {
+    transform: translateY(0);
   }
 }
 </style>

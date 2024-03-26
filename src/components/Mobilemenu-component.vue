@@ -19,7 +19,7 @@ const generalStore = useGeneralStore();
     opacity: 0;
     z-index: 15;
     width: 100vw;
-    height: calc(100vh - 100px);
+    height: calc(100vh);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -27,7 +27,7 @@ const generalStore = useGeneralStore();
     top: 50%;
     transform: translate(-50%, -50%);
     background-color: rgba(20, 20, 20, 0.308);
-    margin: auto;
+    margin: -50px auto auto auto;
     animation: appear .3s .1s forwards;
     backdrop-filter: blur(10px);
 
@@ -38,7 +38,7 @@ const generalStore = useGeneralStore();
         align-items: center;
 
         li {
-            margin-bottom: 10px;
+            margin-bottom: 50px;
 
             a {
                 text-transform: capitalize;

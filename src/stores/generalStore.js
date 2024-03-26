@@ -6,8 +6,13 @@ export const useGeneralStore = defineStore('generalStore', {
         activePage: 0,
         logoUrl: require('@/assets/images/mobile/logo.svg'),
         test: 'test',
+        upperActive: 'upper-active',
+        middleActive: 'middle-active',
+        lowerActive: 'lower-active',
+        upper: 'upper',
+        middle: 'middle',
+        lower: 'lower',
         //ARRAYS
-        hamburgerClasses: ['upper', 'middle', 'lower'],
         //OBJECTS
         pages: [
             //HOME PAGE

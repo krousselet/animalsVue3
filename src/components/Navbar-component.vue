@@ -3,10 +3,10 @@
         <div id="logo-container">
             <img :src="generalStore.logoUrl" alt="logo de poulet">
         </div>
-        <div class="hamburger" @click.prevent="generalStore.setMobileMenuActive()">
-            <div :class="generalStore.hamburgerClasses[0]"></div>
-            <div :class="generalStore.hamburgerClasses[1]"></div>
-            <div :class="generalStore.hamburgerClasses[2]"></div>
+        <div class="hamburger" @click="generalStore.setMobileMenuActive">
+            <div class="upper" :class="{ 'upperActive': generalStore.hamburgerMobileMenuIsActive === 1 }"></div>
+            <div class="middle" :class="{ 'middleActive': generalStore.hamburgerMobileMenuIsActive === 1 }"></div>
+            <div class="lower" :class="{ 'lowerActive': generalStore.hamburgerMobileMenuIsActive === 1 }"></div>
         </div>
         <div class="desktop-menu">
             <ul>
@@ -33,6 +33,10 @@ const generalStore = useGeneralStore();
     background-color: rgba(128, 128, 128, 0.801);
     border-radius: 0 0 7px 7px;
     box-shadow: 0 0 15px black;
+    position: sticky;
+    left: 0;
+    top: 0;
+    z-index: 50;
 
     #logo-container {
         width: 50px;
@@ -52,6 +56,7 @@ const generalStore = useGeneralStore();
             justify-content: center;
             align-items: center;
             position: relative;
+            z-index: 50;
             margin-right: 15px;
             cursor: pointer;
 
@@ -72,6 +77,27 @@ const generalStore = useGeneralStore();
 
             .lower {
                 top: 75%;
+            }
+
+            .upperActive,
+            .middleActive,
+            .lowerActive {
+                transition: .3s ease;
+            }
+
+            .upperActive {
+                top: 50%;
+                transform: rotate(-135deg);
+            }
+
+            .middleActive {
+                opacity: 0;
+                transform: rotate(360deg);
+            }
+
+            .lowerActive {
+                top: 50%;
+                transform: rotate(135deg);
             }
         }
     }
@@ -107,6 +133,7 @@ const generalStore = useGeneralStore();
                         color: black;
                         position: relative;
                         z-index: 20;
+                        transition: .3s ease;
 
 
                         &::before {
@@ -117,12 +144,12 @@ const generalStore = useGeneralStore();
                             background: linear-gradient(rgb(255, 196, 0), rgb(255, 217, 0));
                             left: 50%;
                             bottom: 0;
-                            transform: translateX(-50%);
-                            transition: .5s ease;
-                            z-index: 20;
+                            transform: translate(-50%, 50%);
+                            transition: .3s ease;
+                            z-index: 21;
                         }
 
-                        &::before:hover {
+                        &:hover::before {
                             transition: .5s ease;
                             width: 100%;
                         }

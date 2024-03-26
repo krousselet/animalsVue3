@@ -39,6 +39,7 @@ function initCalendar() {
         title: animal.name,
         start: animal.creationDate,
         end: new Date(new Date(animal.creationDate).setMonth(new Date(animal.creationDate).getMonth() + 6)).toISOString().split('T')[0],
+        backgroundColor: animal.backgroundColor,
     }));
 
 
@@ -57,3 +58,11 @@ function initCalendar() {
     calendar.render();
 }
 </script>
+
+<style lang="scss" scoped>
+.fc {
+    width: 100%;
+    height: calc(100vh - 100px);
+    margin: 0 auto;
+}
+</style>
